@@ -1,0 +1,41 @@
+// To parse this JSON data, do
+//
+//     final call = callFromJson(jsonString);
+
+import 'dart:convert';
+
+Call callFromJson(String str) => Call.fromJson(json.decode(str));
+
+String callToJson(Call data) => json.encode(data.toJson());
+
+class Call {
+    String name;
+    String avatar;
+    bool isMissedCall;
+    String date;
+    String time;
+
+    Call({
+        required this.name,
+        required this.avatar,
+        required this.isMissedCall,
+        required this.date,
+        required this.time,
+    });
+
+    factory Call.fromJson(Map<String, dynamic> json) => Call(
+        name: json["name"],
+        avatar: json["avatar"],
+        isMissedCall: json["isMissedCall"],
+        date: json["date"],
+        time: json["time"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "name": name,
+        "avatar": avatar,
+        "isMissedCall": isMissedCall,
+        "date": date,
+        "time": time,
+    };
+}

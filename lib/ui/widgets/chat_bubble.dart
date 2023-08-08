@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/models/single_chat_model.dart';
+import 'package:whatsapp/ui/widgets/utilities_widget.dart';
 
 class ChatBubble extends StatelessWidget {
   ChatBubble({super.key, required this.messageList});
@@ -18,7 +19,8 @@ class ChatBubble extends StatelessWidget {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 5, right: 45, bottom: 20),
+                padding: const EdgeInsets.only(
+                    top: 5, left: 5, right: 45, bottom: 15),
                 child: Text(messageList.message,
                     style: TextStyle(
                         color: (messageList.isSent)
@@ -26,29 +28,30 @@ class ChatBubble extends StatelessWidget {
                             : Colors.black)),
               ),
               Positioned(
-                  top: 14,
-                  right: 3,
-                  child: Row(
-                    children: [
-                      Text(
-                        messageList.sentAt,
-                        style: TextStyle(
-                            fontSize: 10,
-                            color: (messageList.isSent)
-                                ? Colors.white
-                                : Colors.black),
-                      ),
-                      (messageList.isSent)
-                          ? Icon(
-                              Icons.done_all,
-                              size: 15,
-                              color: (messageList.isRead)
-                                  ? Colors.blue[300]
-                                  : Colors.grey,
-                            )
-                          : Container()
-                    ],
-                  ))
+                top: 20,
+                right: 4,
+                child: Row(
+                  children: [
+                    Text(
+                      messageList.sentAt,
+                      style: TextStyle(
+                          fontSize: 10,
+                          color: (messageList.isSent)
+                              ? Colors.white
+                              : Colors.black),
+                    ),
+                    UtilityWidget().widthSpace(2),
+                    (messageList.isSent)
+                        ? Icon(
+                            Icons.done_all,
+                            size: 15,
+                            color: (messageList.isRead)
+                                ? Colors.blue[300]
+                                : Colors.grey,
+                          )
+                        : Container()
+                  ],
+                )),
             ],
           ),
         ),

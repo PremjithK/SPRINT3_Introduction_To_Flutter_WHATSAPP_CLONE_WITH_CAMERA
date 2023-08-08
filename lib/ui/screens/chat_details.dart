@@ -198,14 +198,16 @@ class _ChatDetailsState extends State<ChatDetails> {
                         child: FloatingActionButton(
                           backgroundColor: Colors.teal,
                           onPressed: () {
-                            setState(() {
-                              messageList.add(SingleChat(
-                                  isSent: true,
-                                  isRead: false,
-                                  message: _textController.text,
-                                  sentAt: "10:10am"));
-                            });
-                            _textController.clear();
+                            if (_textController.text != "") {
+                              setState(() {
+                                messageList.add(SingleChat(
+                                    isSent: true,
+                                    isRead: false,
+                                    message: _textController.text,
+                                    sentAt: "10:10am"));
+                              });
+                              _textController.clear();
+                            }
                           },
                           child:
                               (showSend) ? Icon(Icons.send) : Icon(Icons.mic),
@@ -236,9 +238,9 @@ class _ChatDetailsState extends State<ChatDetails> {
 
   Container bottomMenu() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-      width: 350,
-      height: 350,
+      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+      //width: 350,
+      height: 320,
       child: Column(
         children: [
           Row(
@@ -258,6 +260,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                   color: Colors.purple),
             ],
           ),
+          UtilityWidget().heightSpace(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -275,6 +278,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                   color: Colors.teal),
             ],
           ),
+          UtilityWidget().heightSpace(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
