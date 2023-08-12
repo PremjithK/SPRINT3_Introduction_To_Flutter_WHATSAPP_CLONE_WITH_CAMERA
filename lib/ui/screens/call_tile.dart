@@ -31,7 +31,7 @@ class CallTile extends StatelessWidget {
                   size: 18,
                 )
               : Icon(
-                  Icons.call_made_outlined,
+                  Icons.call_made,
                   color: Colors.green,
                   size: 18,
                 ),
