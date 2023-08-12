@@ -2,7 +2,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/ui/screens/camera_page.dart';
 import 'package:whatsapp/ui/screens/homepage.dart';
-import 'package:whatsapp/ui/screens/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
