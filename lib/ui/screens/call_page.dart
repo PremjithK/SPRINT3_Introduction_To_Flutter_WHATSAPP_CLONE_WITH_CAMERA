@@ -7,24 +7,24 @@ class CallPage extends StatelessWidget {
 
   List<Call> callList = [
     Call(
-        name: "George",
+        name: 'George',
         avatar:
-            "https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+            'https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg',
         isMissedCall: false,
-        date: "Today",
-        time: "11:00am"),
+        date: 'Today',
+        time: '11:00am'),
     Call(
-        name: "Michael",
-        avatar: "",
+        name: 'Michael',
+        avatar: '',
         isMissedCall: false,
-        date: "Yesterday",
-        time: "11:00am"),
+        date: 'Yesterday',
+        time: '11:00am'),
     Call(
-        name: "Amal",
-        avatar: "",
+        name: 'Amal',
+        avatar: '',
         isMissedCall: true,
-        date: "July 20",
-        time: "12:00pm"),
+        date: 'July 20',
+        time: '12:00pm'),
   ];
 
   @override
