@@ -116,8 +116,8 @@ class _ChatDetailsState extends State<ChatDetails> {
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              child: Image.network(
-                "https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg",
+              child: Image.asset(
+                "assets/images/whatsapp_bg.png",
                 fit: BoxFit.cover,
               ),
             ),
